@@ -1,4 +1,6 @@
 class PostsController < ApplicationController
+  rescue_from ActiveRecord::RecordNotFound, with: :post_not_found
+
   before_action :set_post, only: %i[ show edit update destroy ]
 
   # GET /posts or /posts.json
@@ -66,5 +68,9 @@ class PostsController < ApplicationController
     # Only allow a list of trusted parameters through.
     def post_params
       params.require(:post).permit(:title, :description)
+    end
+
+    def post_not_found
+      redirect_to posts_path, alert: I18n.t("posts.not_found_alert")
     end
 end
