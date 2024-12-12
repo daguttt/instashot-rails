@@ -1,18 +1,18 @@
 <div id="<%= dom_id post %>">
   <p class="my-5">
-    <strong class="block font-medium mb-1">Title:</strong>
+    <strong class="block font-medium"><%= t "activerecord.attributes.post.title" %></strong>
     <%= post.title %>
   </p>
 
   <p class="my-5">
-    <strong class="block font-medium mb-1">Description:</strong>
+    <strong class="block font-medium"> <%= t "activerecord.attributes.post.description" %></strong>
     <% unless post.description.blank? %>
-      <p><%= post.description %></p>
+      <span><%= post.description %></span>
     <% else %>
-      <p class="italic"><%= t "posts.show.description.empty" %> </p>
+      <span class="italic"><%= t "posts.show.description.empty" %> </span>
     <% end %>
   </p>
 
-  <p><strong>Image</strong></p>
+  <p><strong> <%= t "activerecord.attributes.post.image" %></strong></p>
   <%= image_tag post.image.url %>
 </div>
