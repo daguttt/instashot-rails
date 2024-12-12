@@ -18,7 +18,9 @@ default: &default
   # For details on connection pooling, see Rails configuration guide
   # https://guides.rubyonrails.org/configuring.html#database-pooling
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-
+  username: <%= ENV.fetch("DATABASE_USERNAME") %>
+  password: <%= ENV.fetch("DATABASE_PASSWORD") %>
+  port: <%= ENV.fetch("DATABASE_PORT") %>
 
 development:
   <<: *default
@@ -80,6 +82,5 @@ test:
 #
 production:
   <<: *default
-  database: instashot_production
-  username: instashot
-  password: <%= ENV["INSTASHOT_DATABASE_PASSWORD"] %>
+  host: <%= ENV.fetch("DATABASE_HOST") %>
+  database: <%= ENV.fetch("DATABASE_NAME") %>
