@@ -1,12 +1,9 @@
-<div class="w-full">
-  <% if notice.present? %>
-    <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block" id="notice"><%= notice %></p>
-  <% end %>
-
+<main class="container mx-auto p4">
+  <%= render "partials/flash" %>
   <% content_for :title, "Posts" %>
 
   <div class="flex justify-between items-center">
-    <h1 class="font-bold text-4xl">Posts</h1>
+    <h1 class="font-bold text-4xl"><%= t "posts.index.title" %> </h1>
     <%= link_to "New post", new_post_path, class: "rounded-lg py-3 px-5 bg-blue-600 text-white block font-medium" %>
   </div>
 
@@ -18,4 +15,4 @@
       </p>
     <% end %>
   </div>
-</div>
+</main>
