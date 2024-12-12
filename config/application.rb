@@ -38,5 +38,10 @@ module Instashot
 
     # Don't generate system test files.
     config.generators.system_tests = nil
+
+    # I18n
+    config.i18n.default_locale = :en
+    config.i18n.fallbacks = [ :es ]
+    config.available_locales = [ :en, :es ]
   end
 end

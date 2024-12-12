@@ -1,0 +1,16 @@
+<header class="min-h-16 py-4 sticky top-0 bg-gray-50/80 dark:bg-gray-800/80 backdrop-blur-sm">
+  <div class="container mx-auto px-4 flex items-baseline justify-between">
+    <%= link_to root_path, class: "font-bold text-2xl" do %>
+      <h1>Instashot</h1>
+    <% end %>
+
+    <div class="flex gap-5 items-center">
+      <%= form_with url: url_for(locale: nil), method: :get do |f| %>
+        <%= f.select :locale,
+          I18n.available_locales.map { |locale| [I18n.t("locale.names.#{locale}"), locale] },
+          { selected: I18n.locale },
+          { onchange: "this.form.submit()", class: "py-3 px-4 pe-9 block w-full bg-gray-100 border-transparent rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-700 dark:border-transparent dark:text-neutral-400 dark:focus:ring-neutral-600" } %>
+      <% end %>
+    </div>
+  </div>
+</header>
