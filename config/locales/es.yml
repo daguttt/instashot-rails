@@ -1,0 +1,12 @@
+es:
+  posts:
+    attributes:
+      title: 'Título'
+      description: 'Descripción'
+    not_found_alert: 'Publicación no encontrada'
+    index:
+      title: 'Publicaciones'
+  locale:
+    names:
+      en: 'Inglés'
+      es: 'Español'

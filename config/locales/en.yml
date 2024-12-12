@@ -28,4 +28,14 @@
 #       enabled: "ON"
 
 en:
-  hello: "Hello world"
+  posts:
+    attributes:
+      title: 'Title'
+      description: 'Description'
+    not_found_alert: 'Post not found'
+    index:
+      title: 'Posts'
+  locale:
+    names:
+      en: 'English'
+      es: 'Spanish'
