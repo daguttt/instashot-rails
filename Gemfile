@@ -55,3 +55,6 @@ group :development do
 end
 
 gem "dotenv"
+
+# File storage service
+gem "cloudinary", "~> 2.2"
