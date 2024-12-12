@@ -1,24 +1,24 @@
-# README
+# Instashot
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+App to upload images using Rails and Cloudinary
 
-Things you may want to cover:
+## Developing
 
-* Ruby version
+### Getting Started
 
-* System dependencies
+#### 1. Environment variables
 
-* Configuration
+Create a `.env` file and populate it based on the content of the `.env.erb` file.
+Environment variables include:
 
-* Database creation
+  1. Database Credentials.
 
-* Database initialization
+> [!NOTE]
+> Keep the value of the `DATABASE_NAME` as is. It's not used in development but required to run the project
 
-* How to run the test suite
+  2. Cloudinary credentials.
 
-* Services (job queues, cache servers, search engines, etc.)
+#### 2. Database setup
 
-* Deployment instructions
-
-* ...
+1. Create database `rails db:migrate`.
+2. Run migrations `rails db:migrate`.
