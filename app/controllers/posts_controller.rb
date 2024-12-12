@@ -27,7 +27,7 @@ class PostsController < ApplicationController
 
     respond_to do |format|
       if @post.save
-        format.html { redirect_to @post, notice: "Post was successfully created." }
+        format.html { redirect_to @post, notice: I18n.t("posts.notices.created") }
         format.json { render :show, status: :created, location: @post }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -71,6 +71,6 @@ class PostsController < ApplicationController
     end
 
     def post_not_found
-      redirect_to posts_path, alert: I18n.t("posts.not_found_alert")
+      redirect_to posts_path, alert: I18n.t("posts.alerts.not_found")
     end
 end

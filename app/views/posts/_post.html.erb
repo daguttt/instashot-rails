@@ -6,7 +6,13 @@
 
   <p class="my-5">
     <strong class="block font-medium mb-1">Description:</strong>
-    <%= post.description %>
+    <% unless post.description.blank? %>
+      <p><%= post.description %></p>
+    <% else %>
+      <p class="italic"><%= t "posts.show.description.empty" %> </p>
+    <% end %>
   </p>
 
+  <p><strong>Image</strong></p>
+  <%= image_tag post.image.url %>
 </div>

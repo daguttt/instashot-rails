@@ -1,11 +1,40 @@
 es:
   posts:
-    attributes:
-      title: 'Título'
-      description: 'Descripción'
-    not_found_alert: 'Publicación no encontrada'
+    alerts:
+      not_found: 'Publicación no encontrada'
+    notices:
+      created: 'Publicación fue creada correctamente'
     index:
       title: 'Publicaciones'
+    new:
+      title: 'Nueva publicación'
+    show:
+      description:
+        empty: 'La descripción está vacía'
+  activerecord:
+    models:
+      post:
+        one: 'Publicación'
+        other: 'Publicaciones'
+    attributes:
+      post:
+        title: 'Título'
+        description: 'Descripción'
+        image: 'Imagen'
+    errors:
+      models:
+        post:
+          attributes:
+            title:
+              blank: 'El título es requerido'
+            image:
+              blank: 'La imagen del post es requerida'
+              wrong_type: 'La imagen debe ser de tipo image/jpeg, image/png o image/webp'
+              wrong_size: 'La imagen debe ser menos de 5MB'
+  helpers:
+    submit:
+      create: 'Crear %{model}'
+      update: 'Guardar cambios'
   locale:
     names:
       en: 'Inglés'

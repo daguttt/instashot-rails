@@ -29,12 +29,43 @@
 
 en:
   posts:
-    attributes:
-      title: 'Title'
-      description: 'Description'
-    not_found_alert: 'Post not found'
+    alerts:
+      not_found: 'Post not found'
+    notices:
+      created: 'Post was successfully created'
     index:
       title: 'Posts'
+    new:
+      title: 'New Post'
+    show:
+      description:
+        empty: 'Description is empty'
+  activerecord:
+    models:
+      post:
+        one: 'Post'
+        other: 'Posts'
+    attributes:
+      post:
+        title: 'Title'
+        description: 'Description'
+        image: 'Image'
+    errors:
+      models:
+        post:
+          attributes:
+            title:
+              blank: 'Post must have a title'
+            image:
+              blank: 'Post must have an image'
+              wrong_type: 'Image must be of type image/jpeg, image/png or image/webp'
+              wrong_size: 'Image must be less than 5MB'
+      messages:
+        blank: '%{model} cannot be empty'
+  helpers:
+    submit:
+      create: 'Create %{model}'
+      update: 'Confirm changes to %{model}'
   locale:
     names:
       en: 'English'
