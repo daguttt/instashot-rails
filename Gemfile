@@ -57,4 +57,4 @@ end
 gem "dotenv"
 
 # File storage service
-gem "cloudinary", "~> 2.2"
+gem "cloudinary", "~> 2.3"
